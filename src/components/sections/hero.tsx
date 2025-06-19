@@ -24,67 +24,194 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Floating Images */}
         <motion.div
-          style={{ y: y1 }}
-          initial={{ scale: 0, rotate: -180, opacity: 0 }}
-          animate={{ scale: 1, rotate: 0, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 1.2, ease: "easeOut" }}
-          className="absolute top-8 left-4 md:left-8 w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden shadow-2xl z-10"
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            delay: 1,
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for smooth animation
+          }}
+          className="absolute top-1/4 left-8 lg:left-16 z-10"
         >
           <motion.div
-            animate={{
-              x: mousePosition.x * 0.02,
-              y: mousePosition.y * 0.02,
+            whileHover={{
+              scale: 1.1,
+              rotate: 2,
+              boxShadow: "0 20px 40px rgba(139, 115, 85, 0.15)",
             }}
-            transition={{ type: "spring", stiffness: 150, damping: 15 }}
-            className="w-full h-full bg-gradient-to-br from-[#E8A87C] to-[#D4956B] flex items-center justify-center"
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              y: {
+                duration: 4,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              },
+            }}
+            animate={{
+              y: [0, -8, 0],
+            }}
+            className="circular-image w-16 h-16 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg cursor-pointer group"
           >
+            <img
+              src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=400&fit=crop"
+              alt="Modern Chair Design"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 md:w-16 md:h-16 bg-[#C8956D] rounded-lg shadow-lg"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-t from-[#8B7355]/20 to-transparent rounded-full"
             />
           </motion.div>
         </motion.div>
 
         <motion.div
-          style={{ y: y2 }}
-          initial={{ scale: 0, rotate: 180, opacity: 0 }}
-          animate={{ scale: 1, rotate: 0, opacity: 1 }}
-          transition={{ delay: 1, duration: 1.2, ease: "easeOut" }}
-          className="absolute top-32 md:top-40 right-4 md:right-8 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shadow-2xl z-10"
+          initial={{ opacity: 0, scale: 0.8, y: -20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            delay: 1.2,
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="absolute top-1/3 right-8 lg:right-16 z-10"
         >
           <motion.div
-            animate={{
-              x: mousePosition.x * -0.015,
-              y: mousePosition.y * -0.015,
+            whileHover={{
+              scale: 1.1,
+              rotate: -2,
+              boxShadow: "0 20px 40px rgba(139, 115, 85, 0.15)",
             }}
-            transition={{ type: "spring", stiffness: 150, damping: 15 }}
-            className="w-full h-full bg-gradient-to-br from-[#8B7355] to-[#7A6B4F] flex items-center justify-center"
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              y: {
+                duration: 5,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 1,
+              }
+            }}
+            animate={{
+              y: [0, 10, 0],
+            }}
+            className="circular-image w-16 h-16 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg cursor-pointer group"
           >
+            <img
+              src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=400&fit=crop"
+              alt="Elegant Furniture Arrangement"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
             <motion.div
-              whileHover={{ scale: 1.1, rotate: -5 }}
-              className="w-14 h-14 md:w-18 md:h-18 bg-[#6B5B4F] rounded-full shadow-lg"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-t from-[#8B7355]/20 to-transparent rounded-full"
             />
           </motion.div>
         </motion.div>
 
         <motion.div
-          style={{ y: y1 }}
-          initial={{ scale: 0, rotate: -90, opacity: 0 }}
-          animate={{ scale: 1, rotate: 0, opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1.2, ease: "easeOut" }}
-          className="absolute bottom-20 md:bottom-32 left-8 md:left-16 w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden shadow-2xl z-10"
+          initial={{ opacity: 0, scale: 0.8, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            delay: 1.4,
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="absolute bottom-28 left-[110px] z-10 hidden lg:block"
         >
           <motion.div
-            animate={{
-              x: mousePosition.x * 0.01,
-              y: mousePosition.y * 0.01,
+            whileHover={{
+              scale: 1.15,
+              rotate: 3,
+              boxShadow: "0 25px 50px rgba(139, 115, 85, 0.2)",
             }}
-            transition={{ type: "spring", stiffness: 150, damping: 15 }}
-            className="w-full h-full bg-gradient-to-br from-[#A8956C] to-[#98856C] flex items-center justify-center"
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              y: {
+                duration: 6,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 2,
+              },
+            }}
+            animate={{
+              y: [0, -6, 0],
+            }}
+            className="circular-image w-20 h-20 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg cursor-pointer group"
           >
+            <img
+              src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=400&fit=crop"
+              alt="Luxury Interior Design"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 10 }}
-              className="w-8 h-8 md:w-12 md:h-12 bg-[#88756C] rounded-lg shadow-lg"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-t from-[#8B7355]/20 to-transparent rounded-full"
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* Additional floating image for enhanced composition */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: -20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{
+            delay: 1.6,
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="absolute bottom-24 right-28 z-10 hidden md:block"
+        >
+          <motion.div
+            whileHover={{
+              scale: 1.12,
+              rotate: -1,
+              boxShadow: "0 15px 30px rgba(139, 115, 85, 0.12)",
+            }}
+            animate={{
+              y: [0, 8, 0],
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              y: {
+                type: "keyframes",
+                duration: 4.5,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 0.5,
+              }
+            }}
+            className="circular-image w-14 h-14 lg:w-18 lg:h-18 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg cursor-pointer group"
+          >
+            <img
+              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400&fit=crop"
+              alt="Modern Living Space"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-gradient-to-t from-[#8B7355]/20 to-transparent rounded-full"
             />
           </motion.div>
         </motion.div>
