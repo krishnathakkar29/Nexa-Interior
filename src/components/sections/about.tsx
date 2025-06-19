@@ -257,10 +257,6 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-          
-
-            
-
             {/* Background Accent */}
             <motion.div
               initial={{ opacity: 0, rotate: -3, scale: 1.05 }}

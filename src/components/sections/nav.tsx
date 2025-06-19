@@ -21,9 +21,6 @@ const Nav = () => {
     { name: "HOME", href: "#home", active: true },
     { name: "ABOUT US", href: "#about" },
     { name: "SERVICES", href: "#services" },
-    { name: "PORTFOLIO", href: "#portfolio" },
-    { name: "NEWS", href: "#news" },
-    { name: "CONTACT", href: "#contact" },
   ];
 
   return (
@@ -41,7 +38,7 @@ const Nav = () => {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
             <h1 className="text-xl lg:text-2xl font-playfair font-semibold text-dark-charcoal tracking-wider">
-              INTERIQUÉ
+              Shreen Designs
             </h1>
           </motion.div>
 
@@ -65,17 +62,6 @@ const Nav = () => {
                 </motion.a>
               ))}
             </div>
-          </div>
-
-          {/* Search Icon */}
-          <div className="hidden lg:block">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-dark-charcoal hover:text-sage-green transition-colors duration-300"
-            >
-              <Search size={20} />
-            </motion.button>
           </div>
 
           {/* Mobile menu button */}

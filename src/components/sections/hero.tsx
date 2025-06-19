@@ -1,26 +1,15 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "../ui/button";
 
 const HeroSection = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 300], [0, -50]);
-  const y2 = useTransform(scrollY, [0, 300], [0, 30]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
-    <section className="relative px-6 md:px-12 py-8 md:py-16">
+    <section
+      className="relative px-6 md:px-12 py-8 md:py-16  bg-white"
+      id="home"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Floating Images */}
         <motion.div
@@ -95,7 +84,7 @@ const HeroSection = () => {
                 repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
                 delay: 1,
-              }
+              },
             }}
             animate={{
               y: [0, 10, 0],
@@ -196,7 +185,7 @@ const HeroSection = () => {
                 repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
                 delay: 0.5,
-              }
+              },
             }}
             className="circular-image w-14 h-14 lg:w-18 lg:h-18 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg cursor-pointer group"
           >
@@ -234,26 +223,26 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-white leading-none tracking-tight"
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-[#8B7355] leading-none tracking-tight"
               style={{
                 fontFamily: "Playfair Display, serif",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.1)",
               }}
             >
-              Spaces
+              Shreen
             </motion.h1>
 
             <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
-              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-white leading-none tracking-tight"
+              className="font-montserrat text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-[#8B7355] leading-none tracking-tight"
               style={{
                 fontFamily: "Playfair Display, serif",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.1)",
               }}
             >
-              Reimagined
+              Designs
             </motion.h1>
           </div>
 

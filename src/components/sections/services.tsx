@@ -5,7 +5,7 @@ function Services() {
   return (
     <>
       {/* Services Section */}
-      <section className="relative py-16 md:py-24 bg-white">
+      <section className="relative py-16 md:py-24 bg-white" id="services">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header */}
           <motion.div
