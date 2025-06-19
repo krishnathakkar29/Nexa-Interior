@@ -6,6 +6,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import "./globals.css";
+import Lenis from "@/components/lenis";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.className} ${montserrat.variable} w-full`}>
-        {children}
+        <Lenis>{children}</Lenis>
       </body>
     </html>
   );
